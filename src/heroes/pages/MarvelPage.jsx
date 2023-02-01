@@ -4,9 +4,7 @@ export const MarvelPage = () => {
     return (
         <>
             <h1>MarvelPage</h1>
-            {
-                <List publisher={'Marvel Comics'} />
-            }
+            <List publisher={'Marvel Comics'} />
         </>
     )
 }
