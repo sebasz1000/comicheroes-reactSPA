@@ -19,14 +19,16 @@ export const HeroPage = () => {
 
     return (
         <div className="row mt-5">
-            <div className="col-4 ">
+            <div className="col-5 col-md-6">
                 <img className="img-thumbnail animate__animated animate__fadeInLeft"
                     src={imgUrl}
                     alt={superhero} />
             </div>
-            <div className="col-8 animate__animated animate__fadeIn">
+            <div className="col-7 col-md-6 animate__animated animate__fadeIn py-md-3 py-0">
                 <div className="row">
-                    <h1 className="animate__animated animate__fadeIn animate__delay_1s">{superhero}</h1>
+                    <h1 className="animate__animated animate__fadeIn animate__delay_1s">
+                        {superhero}
+                    </h1>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item animate__animated animate__fadeInRight ">
                             <b>Alter ego: </b>
