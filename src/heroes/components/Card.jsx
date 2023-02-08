@@ -11,10 +11,10 @@ export const Card = ({ id, superhero, publisher, alter_ego, first_appearance, ch
     }
 
     return (
-        <div className='col-12'>
+        <div className='col-12 animate__animated animate__fadeIn'>
             <div className="card">
                 <div className="row no-gutters">
-                    <div className="col-12 col-md-6 col-lg-6">
+                    <div className="col-12 col-md-6 col-lg-6 ">
                         <img src={imgUrl}
                             alt={superhero} className="card-img" />
                     </div>
