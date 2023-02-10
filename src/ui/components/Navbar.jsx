@@ -1,9 +1,12 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useParams, useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
 
     const navigate = useNavigate()
+    const params = useParams()
+    //const currentPublisher = params['*'].split('/')[1].split('-')[0]
+
 
     const getActive = ({ isActive }) => {
         return `nav-item nav-link ${isActive ? 'active' : ''}`
@@ -25,14 +28,14 @@ export const Navbar = () => {
                     to="/">
                     Asociaciones
                 </Link>
-                <button class="navbar-toggler"
+                <button className="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarNav"
                     aria-controls="navbarNav"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse justify-content-md-between justify-content-start" id="navbarNav">
@@ -40,6 +43,7 @@ export const Navbar = () => {
                         <NavLink
                             className={getActive}
                             to="/marvel"
+                            id='marvel'
                         >
                             Marvel
                         </NavLink>
@@ -47,8 +51,15 @@ export const Navbar = () => {
                         <NavLink
                             className={getActive}
                             to="/dc"
+                            id='dc'
                         >
                             DC
+                        </NavLink>
+                        <NavLink
+                            className={getActive}
+                            to="/search"
+                        >
+                            Search
                         </NavLink>
                     </div>
                     <hr className="border-white d-md-none" />
