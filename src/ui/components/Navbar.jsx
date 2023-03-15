@@ -1,18 +1,20 @@
-import { Link, NavLink, useParams, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/context/AuthContext';
 
 
 export const Navbar = () => {
 
     const navigate = useNavigate()
-    const params = useParams()
     //const currentPublisher = params['*'].split('/')[1].split('-')[0]
 
-
+    const { user = {}, logout } = useContext(AuthContext)
     const getActive = ({ isActive }) => {
         return `nav-item nav-link ${isActive ? 'active' : ''}`
     }
 
     const onLogout = () => {
+        logout()
         navigate('/login', {
             replace: true
         })
@@ -65,7 +67,7 @@ export const Navbar = () => {
                     <hr className="border-white d-md-none" />
                     <ul className="navbar-nav ">
                         <span className='nav-item nav-link text-white text-center align-self-center fw-light fs-6 '>
-                            Sbz
+                            {user?.name}
                         </span>
                         <button className='nav-item nav-link btn btn-outline-light my-3 ml-4'
                             onClick={() => onLogout()}>
