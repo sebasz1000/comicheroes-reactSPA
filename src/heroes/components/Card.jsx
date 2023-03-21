@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const Card = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
 
-	const imgUrl = `./assets/heroes/${id}.jpg`
+	const imgUrl = new URL(`/assets/heroes/${id}.jpg`, import.meta.url).href
 
 	const getCharacters = () => {
 		return (alter_ego !== characters)

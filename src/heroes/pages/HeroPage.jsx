@@ -12,7 +12,7 @@ export const HeroPage = () => {
 
     const { id, superhero, publisher, alter_ego, first_appearance, characters } = hero
 
-    const imgUrl = `/assets/heroes/${id}.jpg`
+    const imgUrl = new URL(`/assets/heroes/${id}.jpg`, import.meta.url).href
 
     const navigate = useNavigate()
     const onBack = () => navigate(-1)
